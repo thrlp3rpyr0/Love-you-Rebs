@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#terminal-container {
+    text-align: center;
+    z-index: 10;
+}
+
+#status {
+    color: #ff3366;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#message {
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+#decrypt-btn {
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+#decrypt-btn:hover {
+    background-color: #e02e5b;
+}
+
+#subtext {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #666666;
+}
+
+#heart-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    pointer-events: none;
+    transform-origin: center center;
+}
+
+.floating-text {
+    position: absolute;
+    color: #ff3366;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-weight: bold;
+}
+
+.floating-text.visible {
+    opacity: 0.95;
+    transform: scale(1);
+}
+
+/* Animación de latido suave cuando se completa */
+.beating {
+    animation: heartBeat 1.3s infinite ease-in-out;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.07); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.04); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
